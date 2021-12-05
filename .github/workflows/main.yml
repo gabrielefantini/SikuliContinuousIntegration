@@ -21,7 +21,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
         with:
           api-level: 29
-          emulator-options: -no-snapshot-save swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-snapshot-save -swiftshader_indirect -noaudio -no-boot-anim -camera-back
           arch: x86_64
           profile: Nexus 6
           script: bash InstallAPKandRunTests.sh
