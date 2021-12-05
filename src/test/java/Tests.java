@@ -10,7 +10,7 @@ public class Tests {
     @Test
     public void insertNewNote(){
         Screen s = new Screen();
-        String path = " file:///Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/InsertNewNote.sikuli/";
+        String path = "/InsertNewNote.sikuli/";
         try{
             s.click(path + "1636537755998.png");
             s.click(path +"1636537782883.png");
