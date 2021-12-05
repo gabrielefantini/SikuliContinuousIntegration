@@ -1,0 +1,27 @@
+name: Sikuli CI
+on: [push]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 16
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 16
+
+      - name: Giving Gradlew correct permissions
+        run: chmod +x gradlew
+
+      - name: Run Sikuli Tests
+        uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
+        with:
+          api-level: 29
+          emulator-options: -no-snapshot-save swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          arch: x86_64
+          profile: Nexus 6
+          script: bash InstallAPKandRunTests.sh
