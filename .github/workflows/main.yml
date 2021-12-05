@@ -23,5 +23,4 @@ jobs:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          emulator-options: -no-snapshot-save -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           script: bash InstallAPKandRunTests.sh
