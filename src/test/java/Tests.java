@@ -1,8 +1,8 @@
-import org.sikuli.script.*;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.python.modules.time.Time.sleep;
 import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
