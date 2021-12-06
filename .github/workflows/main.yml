@@ -17,7 +17,7 @@ jobs:
       - name: Giving Gradlew correct permissions
         run: chmod +x gradlew
 
-      - run: which xvbf
+      - run: bash InstallAndRunXvfb.sh
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
