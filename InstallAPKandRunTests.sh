@@ -1,5 +1,5 @@
 #!/bin/bash
-runXvfb {
+runXvfb() {
     PATH=$PATH:/opt/X11/bin
     Xvfb $1 &
     XVFB_PID=$!
