@@ -23,7 +23,7 @@ jobs:
           sudo /opt/X11/libexec/privileged_startx || true
         working-directory: .
       - name: Start Xvfb
-        run:|
+        run: |
           function runXvfb {
             PATH=$PATH:/opt/X11/bin
             Xvfb $1 &
