@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -17,8 +17,7 @@ jobs:
       - name: Giving Gradlew correct permissions
         run: chmod +x gradlew
 
-      - run: sudo apt-get install xvfb
-      - run: Xvfb :1337 & export DISPLAY=:1337 &
+      - run: /usr/X11/bin/xvfb :1337 & export DISPLAY=:1337 &
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
