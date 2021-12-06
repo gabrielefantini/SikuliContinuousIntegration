@@ -3,6 +3,9 @@ import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
@@ -10,7 +13,9 @@ public class Tests {
     @Test
     public void insertNewNote(){
         Screen s = new Screen();
-        String path = "/InsertNewNote.sikuli/";
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
         try{
             s.click(path + "1636537755998.png");
             s.click(path +"1636537782883.png");
