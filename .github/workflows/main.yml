@@ -17,7 +17,11 @@ jobs:
       - name: Giving Gradlew correct permissions
         run: chmod +x gradlew
 
-      - run: bash InstallAndRunXvfb.sh
+      - name: Add X11
+        run: |
+          brew install --cask xquartz
+          sudo /opt/X11/libexec/privileged_startx || true
+        working-directory: .
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
