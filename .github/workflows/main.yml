@@ -25,6 +25,7 @@ jobs:
       - name: Start Xvfb
         run: |
           function runXvfb {
+            echo lanciato xvfb
             PATH=$PATH:/opt/X11/bin
             Xvfb 1 &
             XVFB_PID=$!
