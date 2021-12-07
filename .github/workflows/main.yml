@@ -24,7 +24,6 @@ jobs:
         working-directory: .
       - name: Start Xvfb
         run: |
-          function runXvfb {
             PATH=$PATH:/opt/X11/bin
             Xvfb 1 &
             XVFB_PID=$!
@@ -32,7 +31,6 @@ jobs:
             trap "echo killing process $XVFB_PID... >&2; kill $XVFB_PID" 0
             export DISPLAY=1
             sleep 2
-          }
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
