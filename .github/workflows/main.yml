@@ -55,3 +55,5 @@ jobs:
           from: Luke Skywalker # <user@example.com>
           # Optional HTML body read from file:
           html_body: file:///Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/build/reports/tests/test/index.html
+            #TODO da modificare in futuro per rendere più leggibile il report
+          attachments: /tmp/screenshot.png
