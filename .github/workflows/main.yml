@@ -14,13 +14,27 @@ jobs:
           distribution: 'adopt'
           java-version: 16
 
+      - name: Giving Gradlew correct permissions
+        run: chmod +x gradlew
+
+      - name: Add X11
+        run: |
+          brew install --cask xquartz
+          sudo /opt/X11/libexec/privileged_startx || true
+        working-directory: .
+      - name: Start Xvfb
+        run: |
+            PATH=$PATH:/opt/X11/bin
+            Xvfb :0 -screen 0 1920x1080x24 &
+            export DISPLAY=:0.0
+
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
         with:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          emulator-options: -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-snapshot-save -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           script: bash InstallAPKandRunTests.sh
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
