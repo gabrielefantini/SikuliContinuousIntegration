@@ -22,6 +22,7 @@ jobs:
           brew install --cask xquartz
           sudo /opt/X11/libexec/privileged_startx || true
         working-directory: .
+
       - name: Start Xvfb
         run: |
             PATH=$PATH:/opt/X11/bin
@@ -55,5 +56,3 @@ jobs:
           from: Luke Skywalker # <user@example.com>
           # Optional HTML body read from file:
           html_body: file:///Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/build/reports/tests/test/index.html
-            #TODO da modificare in futuro per rendere più leggibile il report
-          attachments: /tmp/screenshot.png
