@@ -21,6 +21,7 @@ jobs:
         run: |
           brew install --cask xquartz
           sudo /opt/X11/libexec/privileged_startx || true
+          brew install android-platform-tools
         working-directory: .
 
       - name: Start Xvfb
