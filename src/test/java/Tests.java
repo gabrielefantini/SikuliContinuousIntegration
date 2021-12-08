@@ -13,15 +13,16 @@ public class Tests {
 
     @Test
     public void insertNewNote(){
-        ADBScreen s = ADBScreen.start("/Users/runner/Library/Android/sdk/platform-tools/adb");
+
+        ADBScreen s = ADBScreen.start("/usr/local/bin/adb");
+
         Path relativePath = Paths.get("");
-        System.out.println(relativePath.toAbsolutePath().toString());
+        System.out.println(s.toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
         try{
             s.aTap(path + "1636537755998.png");
             s.aTap(path +"1636537782883.png");
             s.aTap(path +"1636537803951.png");
-            s.type("New Note");
             s.aTap(path +"1636537831061.png");
             Assert.assertTrue(exists(path+"1636537843807.png"));
         }
