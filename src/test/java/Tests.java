@@ -11,6 +11,28 @@ import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
 
+
+
+    @Test
+    public void insertNewNote(){
+        Screen s = new Screen();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        try{
+            s.click(path + "1636537755998.png");
+            s.click(path +"1636537782883.png");
+            s.click(path +"1636537803951.png");
+            s.type("New Note");
+            s.click(path +"1636537831061.png");
+            Assert.assertTrue(exists(path+"1636537843807.png"));
+        }
+        catch(FindFailed e){
+            e.printStackTrace();
+        }
+    }
+    /*
+    Versione con ADB
     @Test
     public void insertNewNote(){
 
@@ -30,8 +52,6 @@ public class Tests {
             e.printStackTrace();
         }
     }
-
-    /*
      @Test
     public void insertNewNote(){
         Screen s = new Screen();
