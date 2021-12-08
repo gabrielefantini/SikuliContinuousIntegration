@@ -13,7 +13,7 @@ public class Tests {
 
     @Test
     public void insertNewNote(){
-        ADBScreen s = new ADBScreen();
+        ADBScreen s = ADBScreen.start("/Users/runner/Library/Android/sdk/platform-tools/adb");
         Path relativePath = Paths.get("/Users/runner/Library/Android/sdk/platform-tools/adb");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
