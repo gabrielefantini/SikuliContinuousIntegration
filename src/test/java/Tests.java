@@ -1,3 +1,4 @@
+import org.sikuli.android.ADBScreen;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
@@ -11,6 +12,26 @@ import static org.sikuli.basics.FileManager.exists;
 public class Tests {
 
     @Test
+    public void insertNewNote(){
+        ADBScreen s = new ADBScreen();
+        Path relativePath = Paths.get("/Users/runner/Library/Android/sdk/platform-tools/adb");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        try{
+            s.aTap(path + "1636537755998.png");
+            s.aTap(path +"1636537782883.png");
+            s.aTap(path +"1636537803951.png");
+            s.type("New Note");
+            s.aTap(path +"1636537831061.png");
+            Assert.assertTrue(exists(path+"1636537843807.png"));
+        }
+        catch(FindFailed e){
+            e.printStackTrace();
+        }
+    }
+
+    /*
+     @Test
     public void insertNewNote(){
         Screen s = new Screen();
         Path relativePath = Paths.get("");
@@ -29,7 +50,6 @@ public class Tests {
         }
     }
 
-    /*
     @Test
     public void archiveNote(){
         Screen s = new Screen();

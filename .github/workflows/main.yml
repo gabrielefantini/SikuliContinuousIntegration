@@ -22,11 +22,12 @@ jobs:
           brew install --cask xquartz
           sudo /opt/X11/libexec/privileged_startx || true
         working-directory: .
+
       - name: Start Xvfb
         run: |
             PATH=$PATH:/opt/X11/bin
-            Xvfb :0 -screen 0 1920x1080x24 &
-            export DISPLAY=:0.0
+            Xvfb :1337 &
+            export DISPLAY=:1337 &
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
