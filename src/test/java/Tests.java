@@ -15,7 +15,7 @@ public class Tests {
 
     @Test
     public void insertNewNote(){
-        Screen s = new Screen(1);
+        Screen s = new Screen();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
