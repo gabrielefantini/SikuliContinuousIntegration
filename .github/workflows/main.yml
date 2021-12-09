@@ -26,7 +26,7 @@ jobs:
       - name: Start Xvfb
         run: |
             PATH=$PATH:/opt/X11/bin
-            Xvfb :1 &
+            Xvfb :1 -screen 1 2752x1152 &
             export DISPLAY=:1
 
       - name: Run Sikuli Tests
