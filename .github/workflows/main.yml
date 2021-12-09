@@ -37,6 +37,12 @@ jobs:
           profile: Nexus 6
           emulator-options: -no-snapshot-save -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           script: bash InstallAPKandRunTests.sh
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot.png
+
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -56,4 +62,3 @@ jobs:
           from: Luke Skywalker # <user@example.com>
           # Optional HTML body read from file:
           html_body: file:///Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/build/reports/tests/test/index.html
-          attachments: file:///Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/screenshots/screenshot.jpg
