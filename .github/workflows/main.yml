@@ -26,7 +26,8 @@ jobs:
       - name: Start Xvfb
         run: |
             PATH=$PATH:/opt/X11/bin
-            Xvfb &
+            Xvfb :1 &
+            export DISPLAY=:1
 
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
