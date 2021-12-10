@@ -3,5 +3,5 @@ sleep 1
 adb shell am start -n it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity
 export DISPLAY=:1
 sleep 20
-screencapture screenshot.png
+screencapture -T 50 screenshot.png
 ./gradlew test --info
