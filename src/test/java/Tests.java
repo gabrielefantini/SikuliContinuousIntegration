@@ -4,6 +4,7 @@ import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -14,15 +15,19 @@ public class Tests {
 
 
     @Test
-    public void insertNewNote(){
+    public void insertNewNote() throws IOException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        String[] args1 = new String[] {"/bin/bash", "-c", "screencapture", "screenshot1.png"};
+        String[] args2 = new String[] {"/bin/bash", "-c", "screencapture", "screenshot2.png"};
         try{
             s.click(path + "1636537755998.png");
+            Process proc1 = new ProcessBuilder(args1).start();
             s.click(path +"1636537782883.png");
+            Process proc2 = new ProcessBuilder(args2).start();
             s.click(path +"1636537803951.png");
             s.type("New Note");
             s.click(path +"1636537831061.png");
