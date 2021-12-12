@@ -41,7 +41,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: screenshot
-          path: screenshot.mov
+          path: screenshot1.png
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot2.png
 
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
