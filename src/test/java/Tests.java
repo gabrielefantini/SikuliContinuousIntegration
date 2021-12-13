@@ -21,7 +21,14 @@ public class Tests {
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
         try{
-            s.click(path + "1636537755998.png");
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1636537755998.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1636537755998.png");
+            }
+            else {
+                s.click(path + "1636537755998.png");
+            }
             s.click(path + "1636537782883.png");
             s.click(path + "1636537803951.png");
             s.type("New Note");
