@@ -31,9 +31,17 @@ public class Tests {
             }
             s.click(path + "1636537782883.png");
             s.click(path + "1636537803951.png");
-            s.type("New Note");
+            /*s.type("New Note");*/
+            s.click("1639394348949.png");
+            s.click("1639394362710.png");
+            s.click("1639394369501.png");
+            s.click("1639394376509.png");
+            s.click("1639394381003.png");
+            s.click("1639394386783.png");
+            s.click("1639394394272.png");
+            s.click("1639394399750.png");
             s.click(path + "1636537831061.png");
-            Assert.assertTrue(exists(path+"1636537843807.png"));
+            Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
         catch(FindFailed e){
             e.printStackTrace();
