@@ -37,20 +37,7 @@ public class Tests {
             }
             if(s.exists(path + "1636537803951.png", 1.0) == null){
                 s.click(path + "emulator.png");
-                if(s.exists(path + "1636537755998.png", 1.0) == null){
-                    s.click(path + "emulator.png");
-                    s.click(path + "1636537755998.png");
-                }
-                else {
-                    s.click(path + "1636537755998.png");
-                }
-                if(s.exists(path + "1636537782883.png", 1.0) == null){
-                    s.click(path + "emulator.png");
-                    s.click(path + "1636537782883.png");
-                }
-                else {
-                    s.click(path + "1636537782883.png");
-                }
+                s.click(path + "1636537803951.png");
             }
             else {
                 s.click(path + "1636537803951.png");
