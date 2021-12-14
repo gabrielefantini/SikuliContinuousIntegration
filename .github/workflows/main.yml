@@ -41,11 +41,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: screenshot
-          path: screenshot1.png
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshot
-          path: screenshot2.png
+          path: /Users/runner/work/SikuliContinuousIntegration/SikuliContinuousIntegration/screenshots/
 
       - name: Send mail
         uses: dawidd6/action-send-mail@v3

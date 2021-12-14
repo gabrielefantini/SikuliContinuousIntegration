@@ -4,12 +4,19 @@ import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
+
+    public static int screenNumber = 0;
 
     @Test
     public void insertNewNote(){
@@ -18,18 +25,26 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1636537755998.png", 1.0) == null){
                 s.click(path + "emulator.png");
                 s.click(path + "1636537755998.png");
+                screenshot();
             }
             else {
                 s.click(path + "1636537755998.png");
+                screenshot();
             }
             s.click(path + "1636537782883.png");
+            screenshot();
             s.click(path + "1636537803951.png");
+            screenshot();
             s.type("New Note");
+            screenshot();
+            s.click(path + "1636537831061.png");
+            screenshot();
             Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
         catch(FindFailed e){
@@ -176,4 +191,31 @@ public class Tests {
     }
 
      */
+
+    public void screenshot(){
+        try {
+            Robot r = new Robot();
+            // It saves screenshot to desired path
+            String path = System.getProperty("user.dir") + "/screenshots/Screen"+ screenNumber + ".png";
+            File myObj = new File(path);
+
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+
+            screenNumber++;
+
+            // Used to get ScreenSize and capture image
+            Rectangle capture =
+                    new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            BufferedImage Image = r.createScreenCapture(capture);
+            ImageIO.write(Image, "png", myObj);
+            System.out.println("Screenshot saved");
+        }
+        catch (AWTException | IOException ex) {
+            System.out.println(ex);
+        }
+    }
 }
