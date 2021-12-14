@@ -16,7 +16,10 @@ public class Tests {
     @Test
     public void searchNote(){
         Screen s = new Screen();
-        String path = "C:\\"+"\\Users\\gabri\\SearchNote.sikuli\\";
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/SearchNote.sikuli/";
         try{
             s.click(path + "1636543638240.png");
             s.click(path +"1636543663192.png");
