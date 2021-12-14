@@ -1,9 +1,7 @@
-import org.sikuli.android.ADBScreen;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -11,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
@@ -41,13 +38,14 @@ public class Tests {
             screenshot();
             s.click(path + "1636537803951.png");
             screenshot();
+            Thread.sleep(1000);
             s.type("New Note");
             screenshot();
             s.click(path + "1636537831061.png");
             screenshot();
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
-        catch(FindFailed e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
         }
     }
