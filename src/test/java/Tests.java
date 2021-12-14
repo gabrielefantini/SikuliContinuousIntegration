@@ -1,6 +1,5 @@
 import org.sikuli.android.ADBScreen;
 import org.sikuli.script.FindFailed;
-import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,43 +11,7 @@ import static org.sikuli.basics.FileManager.exists;
 
 public class Tests {
 
-
     @Test
-    public void searchNote(){
-        Screen s = new Screen();
-        Screen.showMonitors();
-        Path relativePath = Paths.get("");
-        System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/SearchNote.sikuli/";
-        try{
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("X");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("Y");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("Z");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543846996.png");
-            s.type("X");
-            s.type(Key.ENTER);
-            Assert.assertTrue(exists(path+"1636543875022.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-    /*@Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -72,7 +35,7 @@ public class Tests {
         catch(FindFailed e){
             e.printStackTrace();
         }
-    }*/
+    }
     /*
     Versione con ADB
     @Test
