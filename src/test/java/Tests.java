@@ -1,5 +1,6 @@
 import org.sikuli.android.ADBScreen;
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,8 +13,39 @@ import static org.sikuli.basics.FileManager.exists;
 public class Tests {
 
 
-
     @Test
+    public void searchNote(){
+        Screen s = new Screen();
+        String path = "C:\\"+"\\Users\\gabri\\SearchNote.sikuli\\";
+        try{
+            s.click(path + "1636543638240.png");
+            s.click(path +"1636543663192.png");
+            s.click(path +"1636543679696.png");
+            s.type("X");
+            s.click(path +"1636543693128.png");
+
+            s.click(path + "1636543638240.png");
+            s.click(path +"1636543663192.png");
+            s.click(path +"1636543679696.png");
+            s.type("Y");
+            s.click(path +"1636543693128.png");
+
+            s.click(path + "1636543638240.png");
+            s.click(path +"1636543663192.png");
+            s.click(path +"1636543679696.png");
+            s.type("Z");
+            s.click(path +"1636543693128.png");
+
+            s.click(path + "1636543846996.png");
+            s.type("X");
+            s.type(Key.ENTER);
+            Assert.assertTrue(exists(path+"1636543875022.png"));
+        }
+        catch(FindFailed e){
+            e.printStackTrace();
+        }
+    }
+    /*@Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -31,22 +63,13 @@ public class Tests {
             }
             s.click(path + "1636537782883.png");
             s.click(path + "1636537803951.png");
-            /*s.type("New Note");*/
-            s.click(path +"1639394348949.png");
-            s.click(path +"1639394362710.png");
-            s.click(path +"1639394369501.png");
-            s.click(path +"1639394376509.png");
-            s.click(path +"1639394381003.png");
-            s.click(path +"1639394386783.png");
-            s.click(path +"1639394394272.png");
-            s.click(path +"1639394399750.png");
-            s.click(path + "1636537831061.png");
+            s.type("New Note");
             Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
         catch(FindFailed e){
             e.printStackTrace();
         }
-    }
+    }*/
     /*
     Versione con ADB
     @Test
