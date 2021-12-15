@@ -39,7 +39,7 @@ public class Tests {
             s.click(path + "1636537803951.png");
             screenshot();
             Thread.sleep(1000);
-            s.paste("New Note");
+            s.type("New Note");
             screenshot();
             s.click(path + "1636537831061.png");
             screenshot();
@@ -192,6 +192,7 @@ public class Tests {
 
     public void screenshot(){
         try {
+            Thread.sleep(1000);
             Robot r = new Robot();
             // It saves screenshot to desired path
             String path = System.getProperty("user.dir") + "/screenshots/Screen"+ screenNumber + ".png";
@@ -212,7 +213,7 @@ public class Tests {
             ImageIO.write(Image, "png", myObj);
             System.out.println("Screenshot saved");
         }
-        catch (AWTException | IOException ex) {
+        catch (AWTException | IOException | InterruptedException ex) {
             System.out.println(ex);
         }
     }
