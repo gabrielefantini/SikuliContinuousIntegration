@@ -39,7 +39,7 @@ public class Tests {
             s.click(path + "1636537803951.png");
             screenshot();
             Thread.sleep(1000);
-            s.type("New Note");
+            s.paste("New Note");
             screenshot();
             s.click(path + "1636537831061.png");
             screenshot();
