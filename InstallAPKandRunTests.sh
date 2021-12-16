@@ -1,11 +1,5 @@
 export DISPLAY=:1
-
-for f in ~/.android/avd/*.avd/config.ini
-do
-  echo "$f"
-  sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' "$f"
-done
-
+sed -i "s/hw.keyboard=no/hw.keyboard=yes/g" /Users/runner/.android/avd/test.avd/config.ini
 cat ~/.android/avd/*.avd/config.ini
 adb -e reboot
 sleep 180
