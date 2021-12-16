@@ -38,7 +38,8 @@ public class Tests {
             screenshot();
             s.click(path + "1639648168526.png");
             screenshot();
-            Thread.sleep(1000);
+
+            /*Thread.sleep(1000);
             Process p = Runtime.getRuntime().exec(
                     new String[] { "xdotool",  "type", "NewChecklist" });
             p.waitFor();
@@ -48,7 +49,7 @@ public class Tests {
             s.click(path + "1639648697457.png");
             screenshot();
             s.click(path + "1639648858695.png");
-            screenshot();
+            screenshot();*/
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
         catch(FindFailed | InterruptedException | IOException e){
