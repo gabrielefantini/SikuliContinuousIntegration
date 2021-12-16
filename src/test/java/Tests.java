@@ -16,46 +16,40 @@ public class Tests {
     public static int screenNumber = 0;
 
     @Test
-    public void longTestRun(){
+    public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/LongTestRun.sikuli/";
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
         screenshot();
         try{
             s.click(path + "emulator.png");
-            if(s.exists(path + "1639648120667.png", 1.0) == null){
+            if(s.exists(path + "1636537755998.png", 1.0) == null){
                 s.click(path + "emulator.png");
-                s.click(path + "1639648120667.png");
+                s.click(path + "1636537755998.png");
                 screenshot();
             }
             else {
-                s.click(path + "1639648120667.png");
+                s.click(path + "1636537755998.png");
                 screenshot();
             }
-            s.click(path + "1639648759992.png");
+            s.click(path + "1636537782883.png");
             screenshot();
-            s.click(path + "1639648168526.png");
+            s.click(path + "1636537803951.png");
             screenshot();
-
-            /*Thread.sleep(1000);
-            Process p = Runtime.getRuntime().exec(
-                    new String[] { "xdotool",  "type", "NewChecklist" });
-            p.waitFor();
+            Thread.sleep(1000);
+            s.type("New Note");
             screenshot();
-            s.click(path + "1639648192318.png");
+            s.click(path + "1636537831061.png");
             screenshot();
-            s.click(path + "1639648697457.png");
-            screenshot();
-            s.click(path + "1639648858695.png");
-            screenshot();*/
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
-        catch(FindFailed e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
         }
     }
+
 
     /*
     Versione con ADB
