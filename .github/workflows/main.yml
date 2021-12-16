@@ -30,7 +30,7 @@ jobs:
             export DISPLAY=:1
 
       - name: Run Sikuli Tests
-        uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
+        uses: gabrielefantini/android-emulator-runner@v2 # install and create the Emulator
         with:
           api-level: 29
           arch: x86_64
