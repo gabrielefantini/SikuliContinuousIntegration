@@ -16,6 +16,66 @@ public class Tests {
     public static int screenNumber = 0;
 
     @Test
+    public void longTestRun(){
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/LongTestRun.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1639648120667.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1639648120667.png");
+                screenshot();
+            }
+            else {
+                s.click(path + "1639648120667.png");
+                screenshot();
+            }
+            s.click(path + "1639648759992.png");
+            screenshot();
+            s.click(path + "1639648168526.png");
+            screenshot();
+            Thread.sleep(1000);
+            s.type("New CheckList");
+            screenshot();
+            s.click(path + "1639648192318.png");
+            screenshot();
+            s.click(path + "1639648697457.png");
+            screenshot();
+            s.click(path + "1639648858695.png");
+            screenshot();
+            //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
+        }
+        catch(FindFailed | InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
+    /*
+    Versione con ADB
+    @Test
+    public void insertNewNote(){
+
+        ADBScreen s = ADBScreen.start("/usr/local/bin/adb");
+
+        Path relativePath = Paths.get("");
+        System.out.println(s.toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        try{
+            s.aTap(path + "1636537755998.png");
+            s.aTap(path +"1636537782883.png");
+            s.aTap(path +"1636537803951.png");
+            s.aTap(path +"1636537831061.png");
+            Assert.assertTrue(exists(path+"1636537843807.png"));
+        }
+        catch(FindFailed e){
+            e.printStackTrace();
+        }
+    }
+    @Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -46,45 +106,6 @@ public class Tests {
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
         catch(FindFailed | InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-    /*
-    Versione con ADB
-    @Test
-    public void insertNewNote(){
-
-        ADBScreen s = ADBScreen.start("/usr/local/bin/adb");
-
-        Path relativePath = Paths.get("");
-        System.out.println(s.toString());
-        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        try{
-            s.aTap(path + "1636537755998.png");
-            s.aTap(path +"1636537782883.png");
-            s.aTap(path +"1636537803951.png");
-            s.aTap(path +"1636537831061.png");
-            Assert.assertTrue(exists(path+"1636537843807.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-     @Test
-    public void insertNewNote(){
-        Screen s = new Screen();
-        Path relativePath = Paths.get("");
-        System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        try{
-            s.click(path + "1636537755998.png");
-            s.click(path +"1636537782883.png");
-            s.click(path +"1636537803951.png");
-            s.type("New Note");
-            s.click(path +"1636537831061.png");
-            Assert.assertTrue(exists(path+"1636537843807.png"));
-        }
-        catch(FindFailed e){
             e.printStackTrace();
         }
     }
