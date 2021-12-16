@@ -23,6 +23,9 @@ jobs:
           sudo /opt/X11/libexec/privileged_startx || true
         working-directory: .
 
+      - name: Add xdotool
+        run: brew install xdotool
+
       - name: Start Xvfb
         run: |
             PATH=$PATH:/opt/X11/bin
