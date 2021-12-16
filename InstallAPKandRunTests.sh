@@ -1,6 +1,6 @@
 export DISPLAY=:1
-sed -i "s/hw.keyboard=no/hw.keyboard=yes/g" /Users/runner/.android/avd/test.avd/config.ini
-cat ~/.android/avd/*.avd/config.ini
+sudo sed -i "s/hw.keyboard=no/hw.keyboard=yes/" /Users/runner/.android/avd/test.avd/config.ini
+cat /Users/runner/.android/avd/test.avd/config.ini
 adb -e reboot
 sleep 180
 adb install app/OmniNotes-alphaDebug-6.1.0.apk
