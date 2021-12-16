@@ -52,7 +52,7 @@ public class Tests {
             screenshot();*/
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
         }
     }
