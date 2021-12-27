@@ -68,12 +68,13 @@ jobs:
             export DISPLAY=:1
 
       - name: Run Sikuli Tests
-        uses: gabrielefantini/android-emulator-runner@master # install and create the Emulator
+        uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
         with:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
           emulator-options: -no-snapshot-save -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          enable-hw-keyboard: true
           script: bash InstallAPKandRunTests.sh
 
       - uses: actions/upload-artifact@v2
