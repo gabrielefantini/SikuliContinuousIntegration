@@ -17,7 +17,7 @@ public class Tests {
 
 
     @Test
-    public void longTestRun(){
+    public void longTestRun1(){
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -48,9 +48,50 @@ public class Tests {
             screenshot();
             s.click(path + "1639648858695.png");
             screenshot();
+            cleanAppState();
             //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
         }
-        catch(FindFailed | InterruptedException e){
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void longTestRun2(){
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/LongTestRun.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1639648120667.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1639648120667.png");
+                screenshot();
+            }
+            else {
+                s.click(path + "1639648120667.png");
+                screenshot();
+            }
+            s.click(path + "1639648759992.png");
+            screenshot();
+            s.click(path + "1639648168526.png");
+            screenshot();
+            Thread.sleep(1000);
+            s.type("New CheckList");
+            screenshot();
+            s.click(path + "1639648192318.png");
+            screenshot();
+            s.click(path + "1639648697457.png");
+            screenshot();
+            s.click(path + "1639648858695.png");
+            screenshot();
+            cleanAppState();
+            //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
+        }
+        catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
     }
@@ -239,5 +280,21 @@ public class Tests {
         catch (AWTException | IOException | InterruptedException ex) {
             System.out.println(ex);
         }
+    }
+
+    public void cleanAppState() throws IOException, InterruptedException {
+        //stop application
+        String[] args1 = new String[] {"/bin/bash", "-c", "adb shell", "am", "force-stop", "it.feio.android.omninotes.alpha"};
+        Process proc1 = new ProcessBuilder(args1).start();
+        proc1.waitFor();
+        //clean application state
+        String[] args2 = new String[] {"/bin/bash", "-c", "adb shell", "pm", "clear", "it.feio.android.omninotes.alpha"};
+        Process proc2 = new ProcessBuilder(args2).start();
+        proc2.waitFor();
+        //restart application
+        String[] args3 = new String[] {"/bin/bash", "-c", "adb shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity"};
+        Process proc3 = new ProcessBuilder(args3).start();
+        proc3.waitFor();
+
     }
 }
