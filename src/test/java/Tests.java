@@ -286,15 +286,15 @@ public class Tests {
         //stop application
         String[] args1 = new String[] {"/bin/bash", "-c", "adb shell", "am", "force-stop", "it.feio.android.omninotes.alpha"};
         Process proc1 = new ProcessBuilder(args1).start();
-        wait(10000);
+        Thread.sleep(10000);
         //clean application state
         String[] args2 = new String[] {"/bin/bash", "-c", "adb shell", "pm", "clear", "it.feio.android.omninotes.alpha"};
         Process proc2 = new ProcessBuilder(args2).start();
-        wait(10000);
+        Thread.sleep(10000);
         //restart application
         String[] args3 = new String[] {"/bin/bash", "-c", "adb shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity"};
         Process proc3 = new ProcessBuilder(args3).start();
-        wait(10000);
+        Thread.sleep(10000);
 
     }
 }
