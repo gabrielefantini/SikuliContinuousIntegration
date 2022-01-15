@@ -281,20 +281,16 @@ public class Tests {
     public void cleanAppState() throws IOException, InterruptedException {
 
         //stop application
-        //String[] args1 = new String[] {"/bin/bash", "-c", "adb shell", "am", "force-stop", "it.feio.android.omninotes.alpha"};
         Process proc1 = new ProcessBuilder("adb", "shell", "am", "force-stop", "it.feio.android.omninotes.alpha").start();
-        Thread.sleep(10000);
-        screenshot();
+        proc1.waitFor();
+
         //clean application state
-        //String[] args2 = new String[] {"/bin/bash", "-c", "adb shell", "pm", "clear", "it.feio.android.omninotes.alpha"};
         Process proc2 = new ProcessBuilder("adb", "shell", "pm", "clear", "it.feio.android.omninotes.alpha").start();
-        Thread.sleep(10000);
-        screenshot();
+        proc2.waitFor();
+
         //restart application
-        //String[] args3 = new String[] {"/bin/bash", "-c", "adb shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity"};
         Process proc3 = new ProcessBuilder("adb", "shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity").start();
-        Thread.sleep(10000);
-        screenshot();
+        proc3.waitFor();
 
     }
 }
