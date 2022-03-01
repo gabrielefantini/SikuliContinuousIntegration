@@ -22,7 +22,6 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -32,18 +31,12 @@ public class Tests {
             else {
                 s.click(path + "1646138404642.png");
             }
-            screenshot();
             s.click(path + "1646138418301.png");
-            screenshot();
             s.type("New Note");
-            screenshot();
             s.click(path + "1646138440164.png");
-            screenshot();
             s.type("New Note Content");
-            screenshot();
             s.click(path + "1646138452543.png");
-            screenshot();
-            /*Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);*/
+            Assert.assertTrue(s.exists(path+"1646138525756.png", 5.0) != null);
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
