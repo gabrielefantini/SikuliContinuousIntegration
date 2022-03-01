@@ -155,7 +155,7 @@ public class Tests {
         }
     }
 
-    /*@Test
+    @Test
     public void insertNoteWithReminder() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -173,16 +173,19 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
-            s.type("New Note");
-
-            //Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
+            s.type("New Note With Reminder");
+            s.click(path + "1646154651866.png");
+            s.type(Key.ENTER);
+            s.click(path + "1646138452543.png");
+            //Assert.assertNotNull(s.exists(path + "1646154683667.png", 2.0));
             screenshot();
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
+
     /*
     Versione con ADB
     @Test
