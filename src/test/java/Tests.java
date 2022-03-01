@@ -43,7 +43,7 @@ public class Tests {
             screenshot();
             s.click(path + "1646138452543.png");
             screenshot();
-            Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);
+            /*Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);*/
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
@@ -51,6 +51,42 @@ public class Tests {
         }
     }
 
+   /* @Test
+    public void insertNewChecklist(){
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            screenshot();
+            s.click(path + "1646138418301.png");
+            screenshot();
+            s.type("New Note");
+            screenshot();
+            s.click(path + "1646138440164.png");
+            screenshot();
+            s.type("New Note Content");
+            screenshot();
+            s.click(path + "1646138452543.png");
+            screenshot();
+            Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }
+*/
     /*
     Versione con ADB
     @Test
@@ -210,7 +246,7 @@ public class Tests {
 
     public void screenshot(){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             Robot r = new Robot();
             // It saves screenshot to desired path
             String path = System.getProperty("user.dir") + "/screenshots/Screen"+ screenNumber + ".png";
