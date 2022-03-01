@@ -37,7 +37,8 @@ public class Tests {
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
             Thread.sleep(4000);
-            Assert.assertTrue(s.exists(path+"1646138525756.png", 2.0) != null);
+            screenshot();
+            Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
@@ -45,13 +46,13 @@ public class Tests {
         }
     }
 
-   /* @Test
+    @Test
     public void insertNewChecklist(){
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewChecklist.sikuli/";
         screenshot();
         try{
             s.click(path + "emulator.png");
@@ -62,25 +63,19 @@ public class Tests {
             else {
                 s.click(path + "1646138404642.png");
             }
-            screenshot();
-            s.click(path + "1646138418301.png");
-            screenshot();
+            s.click(path + "1646143844832.png");
             s.type("New Note");
+            s.click(path + "1646143858357.png");
+            s.type("New Checklist Item");
+            s.click(path + "1646143883620.png");
             screenshot();
-            s.click(path + "1646138440164.png");
-            screenshot();
-            s.type("New Note Content");
-            screenshot();
-            s.click(path + "1646138452543.png");
-            screenshot();
-            Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);
+            Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
     }
-*/
     /*
     Versione con ADB
     @Test
