@@ -1,4 +1,6 @@
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Location;
+import org.sikuli.script.Match;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -76,6 +78,83 @@ public class Tests {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void archiveNote() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/ArchiveNote.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            s.type("New Note");
+            s.click(path + "1646138440164.png");
+            s.type("New Note Content");
+            s.click(path + "1646138452543.png");
+            Thread.sleep(4000);
+            Match t = s.find(path + "1646138525756.png");
+            s.dragDrop(t, t.offset(new Location(-200,0)));
+            s.click(path + "1646149664379.png");
+            s.click(path + "1646149674081.png");
+            Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void searchNote() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/SearchNote.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            s.type("X");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.type("Y");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.type("Z");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646150891648.png");
+            s.type("X");
+            Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }
+
     /*
     Versione con ADB
     @Test
