@@ -38,7 +38,7 @@ public class Tests {
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
 
-            Assert.assertTrue(s.exists(path+"1646138525756.png", 2.0) != null);
+            Assert.assertTrue(s.exists(path+"1646138525756.png", 3.0) != null);
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
