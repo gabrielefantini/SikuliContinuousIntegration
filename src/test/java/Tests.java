@@ -16,46 +16,6 @@ public class Tests {
     public static int screenNumber = 0;
 
     @Test
-    public void longTestRun2(){
-        Screen s = new Screen();
-        Screen.showMonitors();
-        Path relativePath = Paths.get("");
-        System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/LongTestRun.sikuli/";
-        screenshot();
-        try{
-            s.click(path + "emulator.png");
-            if(s.exists(path + "1639648120667.png", 1.0) == null){
-                s.click(path + "emulator.png");
-                s.click(path + "1639648120667.png");
-                screenshot();
-            }
-            else {
-                s.click(path + "1639648120667.png");
-                screenshot();
-            }
-            s.click(path + "1639648759992.png");
-            screenshot();
-            s.click(path + "1639648168526.png");
-            screenshot();
-            Thread.sleep(1000);
-            s.type("New CheckList");
-            screenshot();
-            s.click(path + "1639648192318.png");
-            screenshot();
-            s.click(path + "1639648697457.png");
-            screenshot();
-            s.click(path + "1639648858695.png");
-            screenshot();
-            cleanAppState();
-            //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
-        }
-        catch(FindFailed | InterruptedException | IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -65,20 +25,20 @@ public class Tests {
         screenshot();
         try{
             s.click(path + "emulator.png");
-            if(s.exists(path + "1646133851648.png", 1.0) == null){
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
                 s.click(path + "emulator.png");
-                s.click(path + "1646133851648.png");
+                s.click(path + "1646138404642.png");
             }
             else {
-                s.click(path + "1646133851648.png");
+                s.click(path + "1646138404642.png");
             }
-            s.click(path + "1646133884403.png");
+            s.click(path + "1646138418301.png");
             s.type("New Note");
-            s.click(path + "1646133894448.png");
+            s.click(path + "1646138440164.png");
             s.type("New Note Content");
-            s.click(path + "1646133919605.png");
+            s.click(path + "1646138452543.png");
 
-            Assert.assertTrue(s.exists(path+"1646133934025.png", 2.0) != null);
+            Assert.assertTrue(s.exists(path+"1646138525756.png", 2.0) != null);
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
