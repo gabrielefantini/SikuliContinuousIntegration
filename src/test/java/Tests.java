@@ -31,13 +31,14 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("New Note");
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
             Thread.sleep(4000);
             screenshot();
-            //Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
+            Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
@@ -63,12 +64,13 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646143844832.png");
-            s.type("New Note");
+            s.click(path + "1646155682237.png");
+            s.type("New Checklist");
             s.click(path + "1646143858357.png");
             s.type("New Checklist Item");
             s.click(path + "1646143883620.png");
             screenshot();
-            //Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
+            Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
@@ -94,6 +96,7 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("New Note");
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
@@ -103,7 +106,7 @@ public class Tests {
             s.dragDrop(t, t.offset(new Location(-200,0)));
             s.click(path + "1646149664379.png");
             s.click(path + "1646149674081.png");
-            //Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
+            Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
             screenshot();
             cleanAppState();
         }
@@ -130,23 +133,26 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("X");
             s.click(path + "1646138452543.png");
 
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("Y");
             s.click(path + "1646138452543.png");
 
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("Z");
             s.click(path + "1646138452543.png");
 
             s.click(path + "1646150891648.png");
             s.type("X");
             s.type(Key.ENTER);
-            //Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
+            Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
             screenshot();
             cleanAppState();
         }
@@ -173,11 +179,12 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
             s.type("New Note With Reminder");
             s.click(path + "1646154651866.png");
             s.type(Key.ENTER);
             s.click(path + "1646138452543.png");
-            //Assert.assertNotNull(s.exists(path + "1646154683667.png", 2.0));
+            Assert.assertNotNull(s.exists(path + "1646154683667.png", 2.0));
             screenshot();
             cleanAppState();
         }
