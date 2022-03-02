@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    @Test
+    /*@Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -43,9 +43,9 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
 
-   /* @Test
+    @Test
     public void insertNewChecklist(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -68,15 +68,14 @@ public class Tests {
             s.type("New Checklist Item");
             s.click(path + "1646143883620.png");
             screenshot();
-            //Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
+            Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
-            screenshot();
         }
     }
-
+    /*
     @Test
     public void archiveNote() {
         Screen s = new Screen();
