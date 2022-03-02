@@ -214,6 +214,7 @@ public class Tests {
     */
 
     //not ok
+    /*
     @Test
     public void sortNotes() {
         Screen s = new Screen();
@@ -262,6 +263,7 @@ public class Tests {
             screenshot();
         }
     }
+    */
 
     //not ok
     /*@Test
@@ -285,6 +287,7 @@ public class Tests {
             s.click(path + "1646216730595.png");
             s.click(path + "1646216745417.png");
             s.click(path + "1646216760801.png");
+            s.type("New Category");
             screenshot();
             s.click(path + "1646216777931.png");
             s.click(path + "1646216795912.png");
@@ -308,7 +311,7 @@ public class Tests {
         }
     }*/
 
-    /*@Test
+    @Test
     public void deleteCategory() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -329,9 +332,7 @@ public class Tests {
             s.click(path + "1646216730595.png");
             s.click(path + "1646216745417.png");
             s.click(path + "1646216760801.png");
-            s.click(path + "1646216777931.png");
-            s.click(path + "1646216795912.png");
-            s.click(path + "1646216810135.png");
+            s.type("New Category");
             s.click(path + "1646216819055.png");
 
             if(s.exists(path + "1646155682237.png", 1.0) == null)
@@ -339,17 +340,21 @@ public class Tests {
             s.type("New Note");
 
             s.click(path + "1646138452543.png");
-
-            screenshot();
-            Assert.assertNotNull(s.exists(path + "1646216854386.png", 2.0));
             s.click(path + "1646222369476.png");
-            Assert.assertNotNull(s.exists(path + "1646216863742.png", 2.0));
+
+            Assert.assertNotNull(s.exists(path + "1646231939434.png", 2.0));
+            Match t = s.find(path + "1646231939434.png");
+            s.dragDrop(t, t.offset(new Location(0,0)));
+            s.click(path + "1646231986265.png");
+            s.click(path + "1646231996203.png");
+            Assert.assertNotNull(s.exists(path + "1646232025838.png", 2.0));
+
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void screenshot(){
         try {
