@@ -14,7 +14,9 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    /*@Test
+    /*
+    //OK
+    @Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -47,7 +49,7 @@ public class Tests {
         }
     }
     */
-    /*@Test
+    @Test
     public void insertNewChecklist(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -78,7 +80,6 @@ public class Tests {
             e.printStackTrace();
         }
     }
-    */
     /*@Test
     public void archiveNote() {
         Screen s = new Screen();
@@ -117,6 +118,8 @@ public class Tests {
             screenshot();
         }
     }*/
+    /*
+    //OK
     @Test
     public void searchNote() {
         Screen s = new Screen();
@@ -165,9 +168,9 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }
+    }*/
     /*
-    //ok
+    //OK
     @Test
     public void insertNoteWithReminder() {
         Screen s = new Screen();
