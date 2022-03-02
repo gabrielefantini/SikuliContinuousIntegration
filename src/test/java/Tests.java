@@ -16,12 +16,13 @@ public class Tests {
 
     //OK
     @Test
-    public void insertNewNote(){
+    public void insertNewNote() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
+        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -46,12 +47,13 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            cleanAppState();
         }
     }
 
     //OK
     @Test
-    public void insertNewChecklist(){
+    public void insertNewChecklist() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -80,6 +82,7 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            cleanAppState();
         }
     }
     /*
