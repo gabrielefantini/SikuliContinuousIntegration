@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    @Test
+    /*@Test
     public void insertNewNote(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -44,7 +44,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
     /*@Test
     public void insertNewChecklist(){
         Screen s = new Screen();
@@ -75,7 +75,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
     @Test
     public void archiveNote() {
         Screen s = new Screen();
@@ -99,10 +99,11 @@ public class Tests {
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
-            Thread.sleep(4000);
             Match t = s.find(path + "1646138525756.png");
             s.dragDrop(t, t.offset(new Location(-200,0)));
             s.click(path + "1646149664379.png");
+            Thread.sleep(1000);
+            screenshot();
             s.click(path + "1646149674081.png");
             Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
             screenshot();
@@ -113,7 +114,7 @@ public class Tests {
             screenshot();
         }
     }
-    @Test
+    /*@Test
     public void searchNote() {
         Screen s = new Screen();
         Screen.showMonitors();
