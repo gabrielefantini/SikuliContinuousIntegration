@@ -317,7 +317,7 @@ public class Tests {
         Screen.showMonitors();
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/SortNotes.sikuli/";
+        String path = relativePath.toAbsolutePath().toString() + "/DeleteCategory.sikuli/";
         screenshot();
         try{
             s.click(path + "emulator.png");
@@ -355,6 +355,41 @@ public class Tests {
             e.printStackTrace();
         }
     }
+
+   /* @Test
+    public void deleteNoteAndEmptyTrash() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/DeleteNoteAndEmptyTrash.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            if(s.exists(path + "1646155682237.png", 1.0) == null)
+                s.click(path + "1646155682237.png");
+            s.type("New Note");
+            s.click(path + "1646138440164.png");
+            s.type("New Note Content");
+            s.click(path + "1646138452543.png");
+            Thread.sleep(2000);
+
+            s.click(path + "1646138525756.png");
+
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }*/
 
     public void screenshot(){
         try {
