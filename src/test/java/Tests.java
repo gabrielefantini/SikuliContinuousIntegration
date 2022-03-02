@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    /*//OK
+    //OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Screen s = new Screen();
@@ -355,7 +355,7 @@ public class Tests {
             cleanAppState();
         }
     }
-*/
+    //OK
     @Test
     public void deleteNoteAndEmptyTrash() throws IOException, InterruptedException {
         Screen s = new Screen();

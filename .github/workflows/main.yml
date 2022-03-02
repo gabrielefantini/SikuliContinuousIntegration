@@ -5,6 +5,14 @@ on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: macos-latest # the machine type
+    strategy: # we are using strategy if we need to run on parallel with different devices and version
+      matrix:
+        api-level: [ 25 ] #Google api level for example [25,23,28]
+        target: [ default ]
+        #profile: ["Nexus 6", "Nexus 6P", "Nexus 9", "Nexus S", "Nexus 5X", "pixel_2", "pixel_c", "pixel_xl", "pixel_3a", "pixel_4_xl"]
+        profile: [ "Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6","Nexus 6" ]
+      fail-fast: false
+
     steps:
       - name: checkout
         uses: actions/checkout@v2 #checkout the code
@@ -70,9 +78,10 @@ jobs:
       - name: Run Sikuli Tests
         uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
         with:
-          api-level: 29
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
           arch: x86_64
-          profile: Nexus 6
+          profile: ${{ matrix.profile }}
           emulator-options: -no-snapshot-save -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           enable-hw-keyboard: true
           script: bash InstallAPKandRunTests.sh
