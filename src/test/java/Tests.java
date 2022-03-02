@@ -49,6 +49,9 @@ public class Tests {
         }
     }
     */
+
+    /*
+    //OK
     @Test
     public void insertNewChecklist(){
         Screen s = new Screen();
@@ -79,7 +82,8 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
+
     /*@Test
     public void archiveNote() {
         Screen s = new Screen();
@@ -118,6 +122,7 @@ public class Tests {
             screenshot();
         }
     }*/
+
     /*
     //OK
     @Test
@@ -169,6 +174,7 @@ public class Tests {
             screenshot();
         }
     }*/
+
     /*
     //OK
     @Test
@@ -203,6 +209,7 @@ public class Tests {
             screenshot();
         }
     }
+    */
 
     @Test
     public void sortNotes() {
@@ -252,7 +259,7 @@ public class Tests {
             screenshot();
         }
     }
-    @Test
+   /* @Test
     public void insertNewCategory() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -297,162 +304,8 @@ public class Tests {
             e.printStackTrace();
         }
     }*/
-    /*
-    Versione con ADB
-    @Test
-    public void insertNewNote(){
-
-        ADBScreen s = ADBScreen.start("/usr/local/bin/adb");
-
-        Path relativePath = Paths.get("");
-        System.out.println(s.toString());
-        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        try{
-            s.aTap(path + "1636537755998.png");
-            s.aTap(path +"1636537782883.png");
-            s.aTap(path +"1636537803951.png");
-            s.aTap(path +"1636537831061.png");
-            Assert.assertTrue(exists(path+"1636537843807.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-    @Test
-    public void insertNewNote(){
-        Screen s = new Screen();
-        Screen.showMonitors();
-        Path relativePath = Paths.get("");
-        System.out.println(relativePath.toAbsolutePath().toString());
-        String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        screenshot();
-        try{
-            s.click(path + "emulator.png");
-            if(s.exists(path + "1636537755998.png", 1.0) == null){
-                s.click(path + "emulator.png");
-                s.click(path + "1636537755998.png");
-                screenshot();
-            }
-            else {
-                s.click(path + "1636537755998.png");
-                screenshot();
-            }
-            s.click(path + "1636537782883.png");
-            screenshot();
-            s.click(path + "1636537803951.png");
-            screenshot();
-            Thread.sleep(1000);
-            s.type("New Note");
-            screenshot();
-            s.click(path + "1636537831061.png");
-            screenshot();
-            //Assert.assertTrue(s.exists(path+"1636537843807.png", 2.0) != null);
-        }
-        catch(FindFailed | InterruptedException e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void archiveNote(){
-        Screen s = new Screen();
-        String path = "C:\\"+"\\Users\\gabri\\ArchiveNote.sikuli\\";
-        try{
-            Match t = s.find(path + "1636540108598.png");
-            s.dragDrop(t, t.offset(new Location(-200,0)));
-            s.click(path + "1636543425997.png");
-            s.click(path + "1636543443315.png");
-            Assert.assertTrue(exists(path+"1636540108598.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void searchNote(){
-        Screen s = new Screen();
-        String path = "C:\\"+"\\Users\\gabri\\SearchNote.sikuli\\";
-        try{
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("X");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("Y");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543638240.png");
-            s.click(path +"1636543663192.png");
-            s.click(path +"1636543679696.png");
-            s.type("Z");
-            s.click(path +"1636543693128.png");
-
-            s.click(path + "1636543846996.png");
-            s.type("X");
-            s.type(Key.ENTER);
-            Assert.assertTrue(exists(path+"1636543875022.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
 
 
-    @Test
-    public void info(){
-        Screen s = new Screen();
-        String path = "C:\\"+"\\Users\\gabri\\GoToInfo.sikuli\\";
-        try{
-            s.click(path + "1636545060608.png");
-            s.click(path + "1636545070415.png");
-            s.wheel(Mouse.WHEEL_DOWN, 80);
-            s.click(path + "1636545097456.png");
-            Assert.assertTrue(exists(path+"1636545117997.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void deleteNoteAndEmptyTrash(){
-        Screen s = new Screen();
-        String path = "C:\\"+"\\Users\\gabri\\DeleteNoteAndEmptyTrash.sikuli\\";
-        try{
-            s.click(path + "1636552727265.png");
-            s.click(path + "1636552736417.png");
-            s.click(path + "1636552749823.png");
-            s.type("New Note");
-
-            s.click(path + "1636552759942.png");
-            s.click(path + "1636552773948.png");
-            s.click(path + "1636552781504.png");
-            s.click(path + "1636552790152.png");
-
-            s.click(path + "1636552821611.png");
-            s.click(path + "1636552828850.png");
-
-            Assert.assertTrue(exists(path+"1636552841335.png"));
-
-            s.click(path + "1636552848227.png");
-            s.click(path + "1636552856153.png");
-            s.click(path + "1636552861835.png");
-
-            sleep(2);
-
-            Assert.assertFalse(exists(path+"1636552841335.png"));
-        }
-        catch(FindFailed e){
-            e.printStackTrace();
-        }
-    }
-
-     */
 
     public void screenshot(){
         try {
