@@ -17,6 +17,7 @@ public class Tests {
     //OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -54,6 +55,7 @@ public class Tests {
     //OK
     @Test
     public void insertNewChecklist() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -89,6 +91,7 @@ public class Tests {
     //not ok
     @Test
     public void archiveNote() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -130,6 +133,7 @@ public class Tests {
     //OK
     @Test
     public void searchNote() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -181,6 +185,7 @@ public class Tests {
     //OK
     @Test
     public void insertNoteWithReminder() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -215,6 +220,7 @@ public class Tests {
     //not ok
     @Test
     public void sortNotes() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -266,6 +272,7 @@ public class Tests {
     //not ok
     @Test
     public void insertNewCategory() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -312,6 +319,7 @@ public class Tests {
 
     @Test
     public void deleteCategory() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -358,6 +366,7 @@ public class Tests {
     //OK
     @Test
     public void deleteNoteAndEmptyTrash() throws IOException, InterruptedException {
+        Thread.sleep(10000);
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -447,6 +456,5 @@ public class Tests {
         //restart application
         Process proc3 = new ProcessBuilder("adb", "shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity").start();
         proc3.waitFor();
-        Thread.sleep(10000);
     }
 }
