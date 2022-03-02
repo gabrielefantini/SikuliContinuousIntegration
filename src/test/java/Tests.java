@@ -38,15 +38,14 @@ public class Tests {
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
             screenshot();
-            Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
+            //Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
     }
-
-    @Test
+    /*@Test
     public void insertNewChecklist(){
         Screen s = new Screen();
         Screen.showMonitors();
@@ -114,7 +113,6 @@ public class Tests {
             screenshot();
         }
     }
-
     @Test
     public void searchNote() {
         Screen s = new Screen();
@@ -163,7 +161,7 @@ public class Tests {
             screenshot();
         }
     }
-
+    //ok
     @Test
     public void insertNoteWithReminder() {
         Screen s = new Screen();
@@ -245,8 +243,7 @@ public class Tests {
             screenshot();
         }
     }
-
-    /*@Test
+    @Test
     public void insertNewCategory() {
         Screen s = new Screen();
         Screen.showMonitors();
