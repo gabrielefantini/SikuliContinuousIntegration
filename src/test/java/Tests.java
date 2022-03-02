@@ -311,6 +311,7 @@ public class Tests {
         }
     }*/
 
+    /*
     @Test
     public void deleteCategory() {
         Screen s = new Screen();
@@ -355,8 +356,9 @@ public class Tests {
             e.printStackTrace();
         }
     }
+    */
 
-   /* @Test
+    @Test
     public void deleteNoteAndEmptyTrash() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -383,13 +385,25 @@ public class Tests {
             Thread.sleep(2000);
 
             s.click(path + "1646138525756.png");
+            s.click(path + "1646233029187.png");
+            s.click(path + "1646233038892.png");
+
+            Assert.assertNotNull(s.exists(path + "1646233057968.png", 2.0));
+
+            s.click(path + "1646233901227.png");
+            s.click(path + "1646233067424.png");
+            s.click(path + "1646233029187.png");
+            s.click(path + "1646233087573.png");
+            s.click(path + "1646233095446.png");
+
+            Assert.assertNull(s.exists(path + "1646138525756.png", 2.0));
 
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void screenshot(){
         try {
