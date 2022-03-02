@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-   /* //OK
+    //OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Screen s = new Screen();
@@ -350,7 +350,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     @Test
     public void deleteNoteAndEmptyTrash() {
