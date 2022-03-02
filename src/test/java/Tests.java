@@ -85,9 +85,10 @@ public class Tests {
             cleanAppState();
         }
     }
+
     //not ok
     @Test
-    public void archiveNote() {
+    public void archiveNote() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -122,13 +123,13 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
-            screenshot();
+            cleanAppState();
         }
     }
 
     //OK
     @Test
-    public void searchNote() {
+    public void searchNote() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -173,13 +174,13 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
-            screenshot();
+            cleanAppState();
         }
     }
 
     //OK
     @Test
-    public void insertNoteWithReminder() {
+    public void insertNoteWithReminder() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -207,13 +208,13 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
-            screenshot();
+            cleanAppState();
         }
     }
 
     //not ok
     @Test
-    public void sortNotes() {
+    public void sortNotes() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -257,13 +258,13 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
-            screenshot();
+            cleanAppState();
         }
     }
 
     //not ok
     @Test
-    public void insertNewCategory() {
+    public void insertNewCategory() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -304,11 +305,12 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            cleanAppState();
         }
     }
 
     @Test
-    public void deleteCategory() {
+    public void deleteCategory() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -349,11 +351,12 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            cleanAppState();
         }
     }
 
     @Test
-    public void deleteNoteAndEmptyTrash() {
+    public void deleteNoteAndEmptyTrash() throws IOException, InterruptedException {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -398,6 +401,7 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            cleanAppState();
         }
     }
 
