@@ -45,7 +45,8 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
+    */
     /*@Test
     public void insertNewChecklist(){
         Screen s = new Screen();
@@ -78,7 +79,7 @@ public class Tests {
         }
     }
     */
-    @Test
+    /*@Test
     public void archiveNote() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -115,8 +116,8 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }
-    /*@Test
+    }*/
+    @Test
     public void searchNote() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -155,6 +156,7 @@ public class Tests {
             s.click(path + "1646150891648.png");
             s.type("X");
             s.type(Key.ENTER);
+            screenshot();
             Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
             screenshot();
             cleanAppState();
@@ -164,6 +166,7 @@ public class Tests {
             screenshot();
         }
     }
+    /*
     //ok
     @Test
     public void insertNoteWithReminder() {
