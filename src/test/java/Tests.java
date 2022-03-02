@@ -41,6 +41,7 @@ public class Tests {
             Thread.sleep(2000);
             screenshot();
             Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
+            screenshot();
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
@@ -56,6 +57,7 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewChecklist.sikuli/";
+        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
