@@ -84,6 +84,7 @@ public class Tests {
         }
     }*/
 
+    /*
     @Test
     public void archiveNote() {
         Screen s = new Screen();
@@ -122,7 +123,7 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }
+    }*/
 
     /*
     //OK
@@ -261,9 +262,51 @@ public class Tests {
         }
     }*/
 
-    /*
     @Test
     public void insertNewCategory() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/InsertNewCategory.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646216730595.png");
+            s.click(path + "1646216745417.png");
+            s.click(path + "1646216760801.png");
+            s.click(path + "1646216777931.png");
+            s.click(path + "1646216795912.png");
+            s.click(path + "1646216810135.png");
+            s.click(path + "1646216819055.png");
+
+            if(s.exists(path + "1646155682237.png", 1.0) == null)
+                s.click(path + "1646155682237.png");
+            s.type("New Note");
+
+            s.click(path + "1646138452543.png");
+
+            screenshot();
+            Assert.assertNotNull(s.exists(path + "1646216854386.png", 2.0));
+            s.click(path + "1646222369476.png");
+            Assert.assertNotNull(s.exists(path + "1646216863742.png", 2.0));
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    /*@Test
+    public void deleteCategory() {
         Screen s = new Screen();
         Screen.showMonitors();
         Path relativePath = Paths.get("");
@@ -303,9 +346,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
-    */
-
+    }*/
 
     public void screenshot(){
         try {
