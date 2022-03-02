@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    //OK
+    /*//OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Screen s = new Screen();
@@ -220,6 +220,7 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/SortNotes.sikuli/";
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -354,7 +355,7 @@ public class Tests {
             cleanAppState();
         }
     }
-
+*/
     @Test
     public void deleteNoteAndEmptyTrash() throws IOException, InterruptedException {
         Screen s = new Screen();
@@ -394,7 +395,8 @@ public class Tests {
             screenshot();
             s.click(path + "1646233087573.png");
             s.click(path + "1646233095446.png");
-
+            Thread.sleep(3000);
+            screenshot();
             Assert.assertNull(s.exists(path + "1646138525756.png", 2.0));
 
             cleanAppState();
