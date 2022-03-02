@@ -84,7 +84,8 @@ public class Tests {
         }
     }*/
 
-    @Test
+    //not ok
+    /*@Test
     public void archiveNote() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -122,7 +123,7 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }
+    }*/
 
     /*
     //OK
@@ -212,6 +213,7 @@ public class Tests {
     }
     */
 
+    //not ok
     /*@Test
     public void sortNotes() {
         Screen s = new Screen();
@@ -261,7 +263,7 @@ public class Tests {
         }
     }*/
 
-    /*  @Test
+      @Test
         public void insertNewCategory() {
             Screen s = new Screen();
             Screen.showMonitors();
@@ -282,6 +284,7 @@ public class Tests {
                 s.click(path + "1646216730595.png");
                 s.click(path + "1646216745417.png");
                 s.click(path + "1646216760801.png");
+                screenshot();
                 s.click(path + "1646216777931.png");
                 s.click(path + "1646216795912.png");
                 s.click(path + "1646216810135.png");
@@ -302,7 +305,7 @@ public class Tests {
             catch(FindFailed | InterruptedException | IOException e){
                 e.printStackTrace();
             }
-        }*/
+        }
 
     /*@Test
     public void deleteCategory() {
