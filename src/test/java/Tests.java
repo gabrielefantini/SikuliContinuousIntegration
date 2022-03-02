@@ -13,9 +13,8 @@ import static org.sikuli.basics.FileManager.exists;
 public class Tests {
 
     public static int screenNumber = 0;
-/*
 
-    //OK
+   /* //OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Screen s = new Screen();
@@ -351,8 +350,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }
-*/
+    }*/
 
     @Test
     public void deleteNoteAndEmptyTrash() {
@@ -388,7 +386,9 @@ public class Tests {
 
             s.click(path + "1646233901227.png");
             s.click(path + "1646233067424.png");
+            screenshot();
             s.click(path + "1646234785106.png");
+            screenshot();
             s.click(path + "1646233087573.png");
             s.click(path + "1646233095446.png");
 
@@ -442,6 +442,6 @@ public class Tests {
         //restart application
         Process proc3 = new ProcessBuilder("adb", "shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity").start();
         proc3.waitFor();
-
+        Thread.sleep(10000);
     }
 }
