@@ -395,8 +395,7 @@ public class Tests {
             screenshot();
             s.click(path + "1646233087573.png");
             s.click(path + "1646233095446.png");
-            Thread.sleep(3000);
-            screenshot();
+            Thread.sleep(6000);
             Assert.assertNull(s.exists(path + "1646138525756.png", 2.0));
 
             cleanAppState();
