@@ -36,13 +36,13 @@ public class Tests {
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
-            Thread.sleep(4000);
             screenshot();
             //Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
             cleanAppState();
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
@@ -53,7 +53,6 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewChecklist.sikuli/";
-        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -75,6 +74,7 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
@@ -85,7 +85,6 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/ArchiveNote.sikuli/";
-        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -112,6 +111,7 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
@@ -122,7 +122,6 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/SearchNote.sikuli/";
-        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -158,6 +157,7 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
@@ -168,7 +168,6 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNoteWithReminder.sikuli/";
-        screenshot();
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -190,9 +189,101 @@ public class Tests {
         }
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
+    @Test
+    public void sortNotes() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/SortNotes.sikuli/";
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 1");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 2");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 3");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646212420707.png");
+            s.click(path + "1646212441564.png");
+
+            //Assert.assertNotNull(s.exists(path + "1646212463199.png", 2.0));
+            screenshot();
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+            screenshot();
+        }
+    }
+
+   /* @Test
+    public void insertNewCategory() {
+        Screen s = new Screen();
+        Screen.showMonitors();
+        Path relativePath = Paths.get("");
+        System.out.println(relativePath.toAbsolutePath().toString());
+        String path = relativePath.toAbsolutePath().toString() + "/SortNotes.sikuli/";
+        screenshot();
+        try{
+            s.click(path + "emulator.png");
+            if(s.exists(path + "1646138404642.png", 1.0) == null){
+                s.click(path + "emulator.png");
+                s.click(path + "1646138404642.png");
+            }
+            else {
+                s.click(path + "1646138404642.png");
+            }
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 1");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 2");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646138404642.png");
+            s.click(path + "1646138418301.png");
+            s.click(path + "1646155682237.png");
+            s.type("Note 3");
+            s.click(path + "1646138452543.png");
+
+            s.click(path + "1646212420707.png");
+            s.click(path + "1646212441564.png");
+
+            //Assert.assertNotNull(s.exists(path + "1646212463199.png", 2.0));
+            screenshot();
+            cleanAppState();
+        }
+        catch(FindFailed | InterruptedException | IOException e){
+            e.printStackTrace();
+        }
+    }*/
     /*
     Versione con ADB
     @Test
