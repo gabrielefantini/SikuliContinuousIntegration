@@ -14,7 +14,6 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    /*
     //OK
     @Test
     public void insertNewNote(){
@@ -48,9 +47,7 @@ public class Tests {
             e.printStackTrace();
         }
     }
-    */
 
-    /*
     //OK
     @Test
     public void insertNewChecklist(){
@@ -82,10 +79,10 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     //not ok
-    /*@Test
+    @Test
     public void archiveNote() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -123,9 +120,8 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }*/
+    }
 
-    /*
     //OK
     @Test
     public void searchNote() {
@@ -175,9 +171,8 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }*/
+    }
 
-    /*
     //OK
     @Test
     public void insertNoteWithReminder() {
@@ -211,10 +206,8 @@ public class Tests {
             screenshot();
         }
     }
-    */
 
     //not ok
-    /*
     @Test
     public void sortNotes() {
         Screen s = new Screen();
@@ -263,10 +256,9 @@ public class Tests {
             screenshot();
         }
     }
-    */
 
     //not ok
-    /*@Test
+    @Test
     public void insertNewCategory() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -309,9 +301,8 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
-    /*
     @Test
     public void deleteCategory() {
         Screen s = new Screen();
@@ -356,7 +347,6 @@ public class Tests {
             e.printStackTrace();
         }
     }
-    */
 
     @Test
     public void deleteNoteAndEmptyTrash() {
@@ -365,7 +355,7 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/DeleteNoteAndEmptyTrash.sikuli/";
-        screenshot();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -392,7 +382,7 @@ public class Tests {
 
             s.click(path + "1646233901227.png");
             s.click(path + "1646233067424.png");
-            s.click(path + "1646233029187.png");
+            s.click(path + "1646234785106.png");
             s.click(path + "1646233087573.png");
             s.click(path + "1646233095446.png");
 
