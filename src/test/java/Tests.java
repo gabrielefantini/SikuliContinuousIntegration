@@ -84,7 +84,7 @@ public class Tests {
         }
     }*/
 
-    /*@Test
+    @Test
     public void archiveNote() {
         Screen s = new Screen();
         Screen.showMonitors();
@@ -107,10 +107,11 @@ public class Tests {
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
+            Thread.sleep(2000);
             Match t = s.find(path + "1646138525756.png");
             s.dragDrop(t, t.offset(new Location(-200,0)));
             s.click(path + "1646149664379.png");
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             screenshot();
             s.click(path + "1646149674081.png");
             Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
@@ -121,7 +122,7 @@ public class Tests {
             e.printStackTrace();
             screenshot();
         }
-    }*/
+    }
 
     /*
     //OK
@@ -260,7 +261,7 @@ public class Tests {
         }
     }*/
 
-
+    /*
     @Test
     public void insertNewCategory() {
         Screen s = new Screen();
@@ -303,7 +304,7 @@ public class Tests {
             e.printStackTrace();
         }
     }
-
+    */
 
 
     public void screenshot(){
