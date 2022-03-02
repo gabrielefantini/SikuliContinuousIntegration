@@ -13,6 +13,7 @@ import static org.sikuli.basics.FileManager.exists;
 public class Tests {
 
     public static int screenNumber = 0;
+/*
 
     //OK
     @Test
@@ -85,7 +86,6 @@ public class Tests {
             cleanAppState();
         }
     }
-    /*
     //not ok
     @Test
     public void archiveNote() {
@@ -352,6 +352,7 @@ public class Tests {
             e.printStackTrace();
         }
     }
+*/
 
     @Test
     public void deleteNoteAndEmptyTrash() {
@@ -383,7 +384,7 @@ public class Tests {
             s.click(path + "1646233029187.png");
             s.click(path + "1646233038892.png");
 
-            Assert.assertNotNull(s.exists(path + "1646233057968.png", 2.0));
+            //Assert.assertNotNull(s.exists(path + "1646233057968.png", 2.0));
 
             s.click(path + "1646233901227.png");
             s.click(path + "1646233067424.png");
@@ -398,7 +399,7 @@ public class Tests {
         catch(FindFailed | InterruptedException | IOException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     public void screenshot(){
         try {
