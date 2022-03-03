@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-/*//OK
+    //OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -222,7 +222,6 @@ public class Tests {
             e.printStackTrace();
         }
     }
-*/
     @Test
     public void sortNotes() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -277,7 +276,7 @@ public class Tests {
         }
     }
 
-/*  //not ok
+  //not ok
     @Test
     public void insertNewCategory() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -423,7 +422,7 @@ public class Tests {
             e.printStackTrace();
         }
     }
-*/
+
     public void screenshot(){
         try {
             Thread.sleep(2000);
