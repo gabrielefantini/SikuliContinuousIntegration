@@ -244,14 +244,14 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
-            if(s.exists(path + "1646155682237.png", 1.0) == null)
+            if(s.exists(path + "1646155682237.png", 2.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 1");
             s.click(path + "1646138452543.png");
             
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
-            if(s.exists(path + "1646155682237.png", 1.0) == null)
+            if(s.exists(path + "1646155682237.png", 2.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 2");
             s.click(path + "1646138452543.png");
@@ -259,7 +259,7 @@ public class Tests {
             s.click(path + "1646138404642.png");
 
             s.click(path + "1646138418301.png");
-            if(s.exists(path + "1646155682237.png", 1.0) == null)
+            if(s.exists(path + "1646155682237.png", 2.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 3");
             s.click(path + "1646138452543.png");
