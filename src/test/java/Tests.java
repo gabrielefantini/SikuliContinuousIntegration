@@ -251,6 +251,7 @@ public class Tests {
             
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
+            screenshot();
             if(s.exists(path + "1646155682237.png", 2.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 2");
