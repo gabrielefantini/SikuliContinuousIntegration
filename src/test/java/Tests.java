@@ -226,6 +226,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/SortNotes.sikuli/";
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -240,7 +243,6 @@ public class Tests {
                 s.click(path + "1646155682237.png");
             s.type("Note 1");
             s.click(path + "1646138452543.png");
-            Thread.sleep(2000);
             
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
@@ -249,25 +251,22 @@ public class Tests {
             s.type("Note 2");
             s.click(path + "1646138452543.png");
 
-            Thread.sleep(2000);
             s.click(path + "1646138404642.png");
+            screenshot();
             s.click(path + "1646138418301.png");
             if(s.exists(path + "1646155682237.png", 1.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 3");
             s.click(path + "1646138452543.png");
-            
-            Thread.sleep(2000);
+
             s.click(path + "1646212420707.png");
             s.click(path + "1646212441564.png");
 
             Assert.assertNotNull(s.exists(path + "1646212463199.png", 2.0));
             screenshot();
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 
@@ -458,5 +457,7 @@ public class Tests {
         //restart application
         Process proc3 = new ProcessBuilder("adb", "shell", "am", "start", "it.feio.android.omninotes.alpha/it.feio.android.omninotes.MainActivity").start();
         proc3.waitFor();
+        //Wait for application to restart
+        Thread.sleep(10000);
     }
 }
