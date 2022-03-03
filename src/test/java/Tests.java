@@ -240,7 +240,8 @@ public class Tests {
                 s.click(path + "1646155682237.png");
             s.type("Note 1");
             s.click(path + "1646138452543.png");
-
+            Thread.sleep(2000);
+            
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
             if(s.exists(path + "1646155682237.png", 1.0) == null)
@@ -248,13 +249,15 @@ public class Tests {
             s.type("Note 2");
             s.click(path + "1646138452543.png");
 
+            Thread.sleep(2000);
             s.click(path + "1646138404642.png");
             s.click(path + "1646138418301.png");
             if(s.exists(path + "1646155682237.png", 1.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("Note 3");
             s.click(path + "1646138452543.png");
-
+            
+            Thread.sleep(2000);
             s.click(path + "1646212420707.png");
             s.click(path + "1646212441564.png");
 
