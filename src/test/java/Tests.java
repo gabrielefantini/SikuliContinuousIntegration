@@ -14,7 +14,7 @@ public class Tests {
 
     public static int screenNumber = 0;
 
-    /*//OK
+/*//OK
     @Test
     public void insertNewNote() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -23,7 +23,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewNote.sikuli/";
-        screenshot();
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -40,15 +42,11 @@ public class Tests {
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
-            Thread.sleep(2000);
-            screenshot();
+            Thread.sleep(4000);
             Assert.assertNotNull(s.exists(path + "1646138525756.png", 2.0));
-            screenshot();
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 
@@ -61,7 +59,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewChecklist.sikuli/";
-        screenshot();
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -78,13 +78,14 @@ public class Tests {
             s.click(path + "1646143858357.png");
             s.type("New Checklist Item");
             s.click(path + "1646143883620.png");
-            screenshot();
+
+            Thread.sleep(4000);
             Assert.assertNotNull(s.exists(path + "1646148141563.png", 3.0));
-            cleanAppState();
+
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
-            cleanAppState();
+
         }
     }
 
@@ -97,6 +98,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/ArchiveNote.sikuli/";
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -107,26 +111,26 @@ public class Tests {
                 s.click(path + "1646138404642.png");
             }
             s.click(path + "1646138418301.png");
+
             if(s.exists(path + "1646155682237.png", 1.0) == null)
                 s.click(path + "1646155682237.png");
             s.type("New Note");
             s.click(path + "1646138440164.png");
             s.type("New Note Content");
             s.click(path + "1646138452543.png");
+
             Thread.sleep(2000);
             Match t = s.find(path + "1646138525756.png");
             s.dragDrop(t, t.offset(new Location(-200,0)));
-            Thread.sleep(2000);
+
+            Thread.sleep(4000);
             s.click(path + "1646149664379.png");
-            screenshot();
             s.click(path + "1646149674081.png");
+
             Assert.assertNotNull(s.exists(path + "1646149686065.png", 2.0));
-            screenshot();
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 
@@ -139,6 +143,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/SearchNote.sikuli/";
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -171,14 +178,13 @@ public class Tests {
             s.click(path + "1646150891648.png");
             s.type("X");
             s.type(Key.ENTER);
-            screenshot();
+
+            Thread.sleep(2000);
+
             Assert.assertNotNull(s.exists(path + "1646150913496.png", 2.0));
-            screenshot();
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 
@@ -191,6 +197,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNoteWithReminder.sikuli/";
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -208,16 +217,12 @@ public class Tests {
             s.type(Key.ENTER);
             s.click(path + "1646138452543.png");
             Assert.assertNotNull(s.exists(path + "1646154683667.png", 2.0));
-            screenshot();
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 */
-
     @Test
     public void sortNotes() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -252,7 +257,7 @@ public class Tests {
             s.click(path + "1646138452543.png");
 
             s.click(path + "1646138404642.png");
-            screenshot();
+
             s.click(path + "1646138418301.png");
             if(s.exists(path + "1646155682237.png", 1.0) == null)
                 s.click(path + "1646155682237.png");
@@ -263,14 +268,15 @@ public class Tests {
             s.click(path + "1646212441564.png");
 
             Assert.assertNotNull(s.exists(path + "1646212463199.png", 2.0));
-            screenshot();
+
         }
         catch(FindFailed e){
             e.printStackTrace();
+            screenshot();
         }
     }
 
-    /*//not ok
+/*  //not ok
     @Test
     public void insertNewCategory() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -279,7 +285,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/InsertNewCategory.sikuli/";
-        screenshot();
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -294,7 +302,7 @@ public class Tests {
             s.click(path + "1646216745417.png");
             s.click(path + "1646216760801.png");
             s.type("New Category");
-            screenshot();
+
             s.click(path + "1646216777931.png");
             s.click(path + "1646216795912.png");
             s.click(path + "1646216810135.png");
@@ -306,15 +314,14 @@ public class Tests {
 
             s.click(path + "1646138452543.png");
 
-            screenshot();
+
             Assert.assertNotNull(s.exists(path + "1646216854386.png", 2.0));
             s.click(path + "1646222369476.png");
             Assert.assertNotNull(s.exists(path + "1646216863742.png", 2.0));
-            cleanAppState();
+
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
 
@@ -326,7 +333,9 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/DeleteCategory.sikuli/";
-        screenshot();
+
+        cleanAppState();
+
         try{
             s.click(path + "emulator.png");
             if(s.exists(path + "1646138404642.png", 1.0) == null){
@@ -356,14 +365,12 @@ public class Tests {
             s.click(path + "1646231986265.png");
             s.click(path + "1646231996203.png");
             Assert.assertNotNull(s.exists(path + "1646232025838.png", 2.0));
-
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed e){
             e.printStackTrace();
-            cleanAppState();
         }
     }
+
     //OK
     @Test
     public void deleteNoteAndEmptyTrash() throws IOException, InterruptedException {
@@ -373,6 +380,8 @@ public class Tests {
         Path relativePath = Paths.get("");
         System.out.println(relativePath.toAbsolutePath().toString());
         String path = relativePath.toAbsolutePath().toString() + "/DeleteNoteAndEmptyTrash.sikuli/";
+
+        cleanAppState();
 
         try{
             s.click(path + "emulator.png");
@@ -402,20 +411,18 @@ public class Tests {
             s.click(path + "1646233067424.png");
             screenshot();
             s.click(path + "1646234785106.png");
-            screenshot();
+
             s.click(path + "1646233087573.png");
             s.click(path + "1646233095446.png");
             Thread.sleep(6000);
             Assert.assertNull(s.exists(path + "1646138525756.png", 2.0));
 
-            cleanAppState();
         }
-        catch(FindFailed | InterruptedException | IOException e){
+        catch(FindFailed | InterruptedException e){
             e.printStackTrace();
-            cleanAppState();
         }
-    }*/
-
+    }
+*/
     public void screenshot(){
         try {
             Thread.sleep(2000);
